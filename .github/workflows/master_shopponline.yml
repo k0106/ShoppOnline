@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: build
     environment:
-      name: 'production'
+      name: 'Production'
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
@@ -51,6 +51,6 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'ShoppOnline'
-          slot-name: 'production'
-          publish-profile: ${{ secrets.AzureAppService_PublishProfile_d5a55ef901474e4d87025fd6383a034e }}
+          slot-name: 'Production'
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_963113955E934DADADC8567468990AAC }}
           package: .
