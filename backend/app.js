@@ -7,7 +7,7 @@ const app= express
 app.get('/', (req, res) => {
     console.log('Peticion recibida')
 
-    res.status(200).send('<h1>Tienda Online Ecommerce LoreleyN</h1>')
+    res.status(200).send('<h1>Tienda Online Ecommerce Loreley</h1>')
 
 })
 
