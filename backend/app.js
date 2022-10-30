@@ -3,7 +3,7 @@ const express =require('express')
 const app =express()
 
 app.get('/', (req, res) => {
-    res.status(200).send('<h1>Tienda Online Ecommerce</h1>')
+    res.status(200).send('<h1>Tienda Online Ecommerce Loreley</h1>')
 })
 
 app.listen(4000,() =>{
