@@ -1,36 +1,41 @@
-
 require('dotenv').config()
 const express = require('express')
-const mongoose = require('mongoose')
-const path = require('path')
-
+const dbConnect =require('./db')
+cons cors=require('cors')
 
 const app = express()
-console.log('MELk01')
 
-mongoose
-.connect(
-    `mongodb+srv://exeuser:${process.env.MONGO_DB_PASS}@cluster0.ztr4q.mongodb.net/?retryWrites=true&w=majority`
-    )
+dbConnect(app)
+
+app.use(cors({origin:true}))
+
+app.use(express.json())
+
+app.post('/api/v1/products',(req,res)=>{
+    if(!req.body.name) {
+        res.status(400).json({
+            ok:false,
+            message: 'El campo nombre del producto es obligatorio',
+            })
+            return
+    }
+    const newProduct= new Product(req.body)
+
+    newProduct
+    .save()    
     .then((result)=>{
-        console.log(result)
-        app.listen(PORT,()=>{
-            console.log('Servidor escuchando en puerto ' + PORT)
-        })        
-        console.log('Conexion Exitosa a Mongo DB')
+        res.status(201).json({ok:true})
     })
     .catch((err)=>console.log(err))
 
-const productSchema=mongoose.Schema(
-    {
-        name:{type:String,require:true},
-        price:Number,
-    },
-    {timestamps:true}
     
-)
-const Product= mongoose.model('Product',productSchema,)
-    
+})
+
+
+console.log({dbConnect})
+
+const cors=require('cors')
+
 app.use(express.json())
 
 app.post('/api/v1/products',(req, res) => {
@@ -43,18 +48,7 @@ app.post('/api/v1/products',(req, res) => {
         price:req.body.price,
     })   esto es igual a la linea de abajo
  */
-    const newProduct= new Product(req.body)
-
-    newProduct
-    .save()
-    .then((result)=>{
-        res.status(201).json({ok:true})
-    })
-    .catch((err)=>console.log(err))
-
     
-})
-
 app.use(express.static(path.join(__dirname,'public')))
 const PORT =process.env.PORT
 //app.get('/',(    req , res ,next  )=>{
