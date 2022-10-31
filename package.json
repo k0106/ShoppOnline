@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.9"
+  },
+  "name": "JavaWebStock",
+  "version": "1.0.0",
+  "description": "Mi primer Java",
+  "main": "app.js",
+  "author": "Exekiel",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "repository": "https://github.com/ExekielInnovaccion/javawebstock.git"
+}
