@@ -8,15 +8,15 @@ const dbConnect = (app) => {
         .then((result)=>{
             const PORT = process.env.PORT
             console.log(result)
-            app.listen(PORT,()=>{
-                console.log('Servidor escuchando en puerto en el puerto ${PORT}`)
+            app.listen(PORT,()=> {
+                console.log('Servidor escuchando en puerto ${PORT}`)
             })        
             console.log('Conexion Exitosa a Mongo DB')
         })
         .catch((err)=>console.log(err))
-}
 
 
+        
 
 module.exports = ({dbConnect})
 
