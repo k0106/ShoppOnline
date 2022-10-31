@@ -1,0 +1,12 @@
+{
+  "name": "ShoppOnline",
+  "version": "1.0.0",
+  "main": "app.js",
+  "repository": "k0106",
+  "author": "Melissa <105521312+k0106@users.noreply.github.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
