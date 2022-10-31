@@ -6,7 +6,7 @@ const path = require('path')
 
 
 const app = express()
-console.log('Antres de conexion de mongo')
+console.log('MELk01')
 
 mongoose
 .connect(
