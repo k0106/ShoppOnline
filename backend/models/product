@@ -1,13 +1,13 @@
-const mongoose =require
-
-const { default: mongoose } = require("mongoose");
-const { stringify } = require("qs");
-
+const mongoose =require('mongoose')
 const productSchema=mongoose.Schema(
     {
         name:{type:string,required:true},
         price:Number,
     }
     {timestamps:true}
-) 
+)
+const { default: mongoose } = require("mongoose");
+const { stringify } = require("qs");
+
+   
 const Product =mongoose.model('Product',productSchema)

@@ -1,9 +1,13 @@
 require('dotenv').config()
 const express = require('express')
 const dbConnect =require('./db')
-cons cors=require('cors')
+require('dotenv').config()
+const express=require('express')
+const dbConnect=require('./db')
+const cors=require('cors')
+const Product = require('./models/product')
 
-const app = express()
+const app= express()
 
 dbConnect(app)
 
@@ -56,5 +60,5 @@ const PORT =process.env.PORT
     //res.send('<h1>Hola Mundo!°!</h1>')
     //res.status(200).sendFile('ind ex.html',{root: __dirname})
     //next()  //next es fundamental si tuvieramos mas de 1 midlewhere
-//})
-
+//
+})
