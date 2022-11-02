@@ -15,6 +15,4 @@ app.use(cors({origin:true}))
 
 app.use(express.json())
 
-app.use('/api/v1/products',(req,res)=>{
-
-app.post('/api/v1/products',)
+app.use('/api/v1/products',productRouter)
