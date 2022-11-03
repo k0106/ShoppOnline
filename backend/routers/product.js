@@ -5,7 +5,7 @@ const Product = require('./'models/Product')
 
 router.post('/',(req,res)=>{
     if(!req.body.name) {
-        res.status(400).json({
+        res.status(4000).json({
             ok:false,
             message: 'El campo nombre del producto es obligatorio',
 })           
@@ -17,5 +17,4 @@ router.get('/',async(req,res)=>{
     res.status(200).json({ok:true,data:products.length})
 
 })
-
-module.exports =Router
+module.exports =router

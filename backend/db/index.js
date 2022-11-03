@@ -12,7 +12,7 @@ const dbConnect = (app) => {
             const PORT = process.env.PORT
             app.listen(PORT,()=> {
             console.log('Servidor escuchando en puerto ${PORT}`)
-                    })       
+                })    
             console.log('Conexion Exitosa a Mongo DB')
         })
         .catch((err)=>console.log(err))      
